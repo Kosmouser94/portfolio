@@ -1,17 +1,11 @@
 <!DOCTYPE html>
-<html xmlns:th="httpl://www.thymeLeaf.org">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+<html xmlns:th="http://www.thymeLeaf.org">
 <body>
 
 
 <div class="container">
 
-    <form action="/signUp/new" method="post">
+    <form th:action="@{/signUp/new}" method="post">
         <div class="form-group">
             <!--<label for="name">이름</label>-->
             <h1>회원가입 양식</h1>
@@ -24,47 +18,54 @@
                             <tr>
                                 <td>ID</td>
                                 <td>
-                                    <input type="text" name="account">
+                                    <input type="text" name="memberAccount">
                                 </td>
                             </tr>
                             <tr>
                                 <td>비밀번호</td>
                                 <td>
-                                    <input type="password" name="password">
+                                    <input type="password" name="memberPassword">
                                 </td>
                             </tr>
                             <tr>
                                 <td>이름</td>
                                 <td>
-                                    <input type="text" name="full_name">
+                                    <input type="text" name="memberFullName">
                                 </td>
                             </tr>
                             <tr>
                                 <td>연락처</td>
                                 <td>
-                                    <input type="tel" name="phone_number">
+                                    <input type="tel" name="memberPhoneNumber">
                                 </td>
                             </tr>
                             <tr>
                                 <td>이메일</td>
-                                    <input type="email" name="email">
+                                <td>
+                                    <input type="email" name="memberEmail">
                                 </td>
                             </tr>
-                            <!--
-                                                        <tr>
-                                                            <td>가입날짜</td>
-                                                            <td>
-                                                                <input type="hidden" name="member_regdate">=
-                                                            </td>
-                                                        </tr>
-                                                        <tr>
-                                                            <td>멤버타입</td>
-                                                            <td>
-                                                                <input type="text" name="member_type">
-                                                            </td>
-                                                        <tr> -->
-                            <td><button type="submit" name="sign_up_submit">등록</button></td>
+                            <tr>
+                                <td>role</td>
+                                <td>
+                                    <input type="text" name="role">
+                                </td>
                             </tr>
+<!--
+                            <tr>
+                                <td>가입날짜</td>
+                                <td>
+                                    <input type="hidden" name="member_regdate">=
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>멤버타입</td>
+                                <td>
+                                    <input type="text" name="member_type">
+                                </td>
+                           --> <tr>
+                                <td><button type="submit" name="sign_up_submit">등록</button>
+                                </td>
                             </tbody>
                         </table>
                     </form>
@@ -76,7 +77,9 @@
 
 
 
-
+</div>
+    </form>
+</div>
 </body>
 
 </html>

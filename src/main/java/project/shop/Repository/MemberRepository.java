@@ -8,8 +8,10 @@ import java.util.List;
 
 @Repository
 public interface MemberRepository extends JpaRepository<Member, Long> {
-    Member save(Member newMember);
+    Member save(Member Member);
     List<Member> findAll();
+    Member findByMemberAccount(String memberAccount);
+
 
 
 

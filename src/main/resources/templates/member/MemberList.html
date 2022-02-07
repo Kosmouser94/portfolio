@@ -25,24 +25,11 @@
 <!--            <td> <input type="hidden" name="_open" value="on">-->
 <!--            <input type="checkbox" id="open" name="open" class="form-check-input"></td>-->
             <td th:text="${member.id}"></td>
-            <td th:text="${member.account}"></td>
-            <td th:text="${member.full_name}"></td>
-            <td th:text="${member.phone_number}"></td>
-            <td th:text="${member.email}"></td>
-<!--            <td><button th:onclick="'location.href=\'' + @{/member/delete/{id}(id=${member.id})}">삭제</button>-->
-<!--            <td><button th:onclick="|location.href='@{/member/delete/${member.id}}'|">삭제</button></td>-->
+            <td th:text="${member.memberAccount}"></td>
+            <td th:text="${member.memberFullName}"></td>
+            <td th:text="${member.memberPhoneNumber}"></td>
+            <td th:text="${member.memberEmail}"></td>
             <td><a th:href="@{|/member/delete/${member.id}|}">삭제</a></td>
-<!--            <td><button th:onclick="'location.href=\''+ @{/member/delete/${id}} + '\''">삭제</button></td>-->
-
-<!--&lt;!&ndash;            <td><button th:onclick="@{|/member/delete/${member.id}|}">삭제</button></td>&ndash;&gt;-->
-<!--            <td><button th:onclick="|location.href='@{/member/delete/${member.id}}'|">삭제</button></td>-->
-<!--            <td><button onclick=locathin.th:href="@{/member/delete/{member.id}">삭제</button>-->
-<!--            <td><button th:onclick="|location.href='@{/membr/delete/{memberid}(memberid=${member.id})}"></button></td>-->
-<!--            <td><button th:onclick="'location.href=\''+@{/member/delete/${member.id}}}}+'\'">삭제</button></td>-->
-
-<!--            <td><button th:onclick="'location.href=\"+@{${member/delete/${member.id}}}+'\'">삭제</button></td>-->
-<!--            <td><button th:href="@{/basic/items/{itemId}(itemId=${item.id})}"></button></td>-->
-<!--            th:href="@{/basic/items/{itemId}(itemId=${item.id})}"-->
         </tr>
         </tbody>
     </table>

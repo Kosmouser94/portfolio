@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSBoard</title>
+</head>
+
+<body>
+<h2>고객센터 게시판</h2>
+<a href="register.html" th:href="@{/write}">글쓰기</a>
+<table>
+    <tr>
+        <th width="80">글번호</th>
+        <th width="320">제목</th>
+        <th width="100">작성자</th>
+        <th width="180">작성일</th>
+    </tr>
+
+<!--    <tr th:if="${#lists.isEmpty(list)}">-->
+<!--        <td colspan="4">-->
+<!--            문의가 없습니다.-->
+<!--        </td>-->
+<!--    </tr>-->
+    <tr th:each="board : ${list}">
+        <td th:text="${board.csBoardNo}">${board.boardNo}</td>
+        <td><a href="read.html" th:href="@{|read?csBoardNo=${Board.csBoardNo}|}"
+               th:text="${board.csBoardTitle}">${board.title}</a></td>
+        <td th:text="${board.writer}">${board.writer}</td>
+        <td th:text="${#temporals.format(board.regDate, 'MM-dd')}">${board.regDate}</td>
+    </tr>
+</table>
+
+<script>
+    var result= [[${msg}]];
+
+    if result ==="SUCCESS" {
+    alert([[#{common.processSuccess}]]);
+</script>
+
+
+
+
+
+
+</body>
+
+</html>
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" xmlns:th="http://www.thymeleaf.org">-->
+
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Title</title>-->
+<!--</head>-->
+
+<!--<body>-->
+<!--<form id="csBoard" action="redirect:/csboard/csBoard" th:action="@{register}" th:object="${board}" method="POST">-->
+<!--    <table>-->
+<!--        <tr>-->
+<!--            <td>title</td>-->
+<!--            <td><input type="text" name="title" th:field="*{title}"></td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td>Writer</td>-->
+<!--            <td><input type="text" name="writer" th:field="*{writer}"></td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td><textarea name="content" th:field="*{content}"></textarea></td>-->
+<!--        </tr>-->
+<!--    </table>-->
+<!--</form>-->
+
+<!--<div>-->
+<!--    <button type="submit" id="btnRegister">Register</button>-->
+<!--    <button type="submit" id="btnList">List</button>-->
+<!--</div>-->
+<!--</body>-->
+
+<!--</html>-->

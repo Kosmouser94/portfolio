@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,12 +12,22 @@
     <div>
         <ul>
             <li>
-                <a href="/member/MemberList">회원목록</a>
+                <a href="/MemberList">회원목록</a>
             </li>
             <li>
                 <a href="/signUp">회원가입</a>
             </li>
-
+            <li th:if="${member == null}"}>
+                <a href="/login">로그인</a>
+            </li>
+            <li th:if="${member != null}" th:text="${member.memberFullName}">
+            </li>
+            <li th:if="${member != null}">
+                <a href="/logout">로그아웃</a>
+            </li>
+            <li>
+                <a href="/CSBoard">고객센터</a>
+            </li>
         </ul>
     </div>
 </div>
